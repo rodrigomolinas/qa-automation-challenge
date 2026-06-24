@@ -69,8 +69,13 @@ flakiness, make it **reliable**, and briefly note in `STRATEGY.md`:
 
 ## Submitting
 
-Send us a link to the repo (or a zip) with everything above. Make sure a fresh
-checkout runs by following only your README.
+- Put everything in a **private GitHub repository** and **share it** with the
+  reviewer named in your invitation email (add them as a collaborator).
+- The clock is **3 hours from when you start.** Commit and push what you have when
+  time is up — we'd rather see an honest, partial submission with clear notes in
+  `STRATEGY.md` than an over-polished one. Your commit history is fine to leave as-is.
+- Before you finish, make sure a **fresh checkout runs** by following only your
+  README.
 
 ## A note on the follow-up interview
 

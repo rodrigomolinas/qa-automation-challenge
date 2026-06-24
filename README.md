@@ -4,8 +4,11 @@ Thanks for interviewing with us. This is a **~3-hour take-home** challenge.
 
 - 📄 **Read [`CHALLENGE.md`](./CHALLENGE.md) for the full brief** — it has the
   scenario, what to build, and what we're looking for.
-- ⏱️ **Time:** aim for about 3 hours. It's not a race; we'd rather see good
-  judgment on a few things than a rushed attempt at everything.
+- ⏱️ **Time:** you have **3 hours from when you start.** It's not a race within
+  that window — we'd rather see good judgment on a few things than a rushed attempt
+  at everything. Push what you have when time is up.
+- 📦 **Delivery:** put your work in a **private GitHub repo** and share it with the
+  reviewer named in your invitation email.
 - 🤖 **AI tools are encouraged.** Use whatever you normally work with — just be
   open about how you used it (the brief explains where).
 - 🎯 **The short version:** you're the new senior QA automation engineer for
