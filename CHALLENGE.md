@@ -67,15 +67,22 @@ flakiness, make it **reliable**, and briefly note in `STRATEGY.md`:
   loaded" will score **lower**, not higher.
 - ❌ Tests that don't run. We will run them.
 
-## Submitting
+## Getting started & submitting
 
-- Put everything in a **private GitHub repository** and **share it** with the
-  reviewer named in your invitation email (add them as a collaborator).
-- The clock is **3 hours from when you start.** Commit and push what you have when
-  time is up — we'd rather see an honest, partial submission with clear notes in
-  `STRATEGY.md` than an over-polished one. Your commit history is fine to leave as-is.
+- **Start:** click **"Use this template" → Create a new repository** on this repo,
+  set it to **private**, and work there. Your new repo's creation timestamp is your
+  official start time.
+- **Clock:** you have **3 hours from that start time.** Commit and push what you
+  have when time is up — we'd rather see an honest, partial submission with clear
+  notes in `STRATEGY.md` than an over-polished one. Leave your commit history as-is.
+- **Deliver:** add the reviewer named in your invitation email as a **collaborator**
+  on your private repo.
 - Before you finish, make sure a **fresh checkout runs** by following only your
   README.
+
+This repo includes a `STRATEGY.md` template with the sections we expect — fill it
+in. Replace this challenge `README.md` with your own project README (how to install
+and run your tests).
 
 ## A note on the follow-up interview
 

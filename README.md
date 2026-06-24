@@ -7,8 +7,12 @@ Thanks for interviewing with us. This is a **~3-hour take-home** challenge.
 - ⏱️ **Time:** you have **3 hours from when you start.** It's not a race within
   that window — we'd rather see good judgment on a few things than a rushed attempt
   at everything. Push what you have when time is up.
-- 📦 **Delivery:** put your work in a **private GitHub repo** and share it with the
-  reviewer named in your invitation email.
+- 📦 **Getting started:** click **"Use this template" → Create a new repository**,
+  make it **private**, and build your solution there. Your repo's creation time is
+  your start time — the **3-hour clock starts then.**
+- 🤝 **Delivery:** when you're done (or time's up), make sure your work is pushed,
+  then **add the reviewer named in your invitation email as a collaborator** on
+  your private repo.
 - 🤖 **AI tools are encouraged.** Use whatever you normally work with — just be
   open about how you used it (the brief explains where).
 - 🎯 **The short version:** you're the new senior QA automation engineer for
