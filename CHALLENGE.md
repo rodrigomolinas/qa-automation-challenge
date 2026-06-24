@@ -69,14 +69,13 @@ flakiness, make it **reliable**, and briefly note in `STRATEGY.md`:
 
 ## Getting started & submitting
 
-- **Start:** click **"Use this template" → Create a new repository** on this repo,
-  set it to **private**, and work there. Your new repo's creation timestamp is your
-  official start time.
+- **Start:** **fork this repo** and work in your fork. Your fork's creation
+  timestamp is your official start time.
 - **Clock:** you have **3 hours from that start time.** Commit and push what you
   have when time is up — we'd rather see an honest, partial submission with clear
   notes in `STRATEGY.md` than an over-polished one. Leave your commit history as-is.
-- **Deliver:** add the reviewer named in your invitation email as a **collaborator**
-  on your private repo.
+- **Deliver:** share your fork with the reviewer named in your invitation email
+  (add them as a collaborator if your fork is private).
 - Before you finish, make sure a **fresh checkout runs** by following only your
   README.
 
