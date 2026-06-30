@@ -1,52 +1,43 @@
 # Strategy
 
-> All 26 cases are in scope, so this doc is where you show senior judgment *about*
-> them — architecture, reliability, redundancy, and gaps. Fill in each section
-> (bullets are fine, ~1–2 pages). Reference cases by number. Delete these
-> quote-blocks as you go.
->
-> The case list with full steps is in `TEST_CASES.md`.
+> Fill in each section below — bullets are fine, ~1–2 pages total. Reference cases by
+> number. The full case list is in `TEST_CASES.md`. Delete these quote-blocks as you
+> go.
 
-## Stack choice
+## Stack
 
-> Which framework/language did you use? We recommend Playwright with C# or
-> TypeScript — if you chose something else, justify it briefly here.
+> Which framework/language did you use? We recommend Playwright with TypeScript or
+> C# — if you chose something else, explain why.
 
 ## Architecture
 
-> How did you structure the suite so 26 tests share flows instead of duplicating
-> them? What are your main abstractions (page objects, fixtures, actions, data
-> builders) and why? How is the heavily-repeated checkout flow (14/15/16/23/24)
-> handled in one place?
+> Your main abstractions (page objects, fixtures, actions, data builders) and how
+> shared flows are reused. How is the repeated checkout flow (cases 14, 15, 16, 23,
+> 24) implemented in one place?
 
 ## Reliability
 
-> How do you keep the suite green against a flaky, shared live site? Web-first
-> waiting, retries, test-data isolation, download/dialog handling — and what did you
-> deliberately avoid (e.g. arbitrary sleeps)?
+> How you keep the suite stable against a shared, occasionally slow site: web-first
+> waiting, retries, test-data isolation, download/dialog handling — and what you
+> deliberately avoided (e.g. fixed sleeps).
 
-## Redundancy & value
+## Redundancy
 
-> Which of the 26 are low-value or overlap heavily (be specific by number — e.g. the
-> scroll cases 25/26, the subscription cases 10/11, the near-identical order cases)?
-> How did that shape your design?
+> Which of the 26 overlap or add little value (be specific by number — e.g. the
+> scroll cases 25/26, the subscription cases 10/11, the near-identical order cases),
+> and how that shaped your design.
 
-## Gaps in the published suite
+## Gaps
 
-> The 26 are nearly all happy-path. What's missing? Call out the most important
-> untested risks (negative/validation paths, boundaries, data, security,
-> accessibility, cross-browser, etc.) and which one or two you'd add first.
+> The 26 are happy-path only. What important coverage is missing (negative/validation
+> paths, boundaries, data, security, accessibility, cross-browser), and what you
+> would add first.
 
 ## Assumptions & trade-offs
 
-> What did you assume about the product/users? What did you trade off given the
-> 3-hour limit? If the suite is partial, what's done and what's next?
+> What you assumed, and what you traded off given the 3-hour limit. If the suite is
+> partial, what is done and what is next.
 
-## How I used AI
+## Defects / oddities
 
-> What you used AI for. A concrete example where it gave you something wrong or
-> suboptimal and how you caught it. What you verified by hand.
-
-## Defects / oddities noticed
-
-> Any real bugs or odd behavior you ran into on the site while testing.
+> Anything notable you found on the site while testing.

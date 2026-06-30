@@ -1,122 +1,90 @@
 # QA Automation Engineer — Take-Home Challenge
 
-Welcome, and thanks for taking the time. This challenge is designed to take about
-**3 hours**. It's a take-home: do it on your own schedule, on your own machine.
+This challenge takes about **3 hours**. Work on your own machine, on your own
+schedule.
 
-## The scenario
+## Overview
 
-> You've just joined as the **senior QA automation engineer** for an e-commerce
-> company. The product is **https://automationexercise.com** — a working online
-> store (browse products, register/login, add to cart, checkout, etc.).
->
-> The site publishes **26 test cases** at
-> https://automationexercise.com/test_cases. They are also reproduced in this repo
-> in **[`TEST_CASES.md`](./TEST_CASES.md)** so your work is self-contained.
->
-> There is **no test automation yet**. Your job is to **automate all 26 cases** —
-> and, more importantly, to build them as a **real, maintainable automation
-> framework**, not 26 disposable scripts.
+`https://automationexercise.com` is a working e-commerce site — browse products,
+register and log in, add to cart, and check out. It publishes 26 functional test
+cases, reproduced in **[`TEST_CASES.md`](./TEST_CASES.md)** so the challenge is
+self-contained.
 
-## What this challenge is really testing
+There is no automation yet. Your task is to **automate all 26 cases as a single,
+well-structured test framework** running against the live site.
 
-Automating 26 documented happy-path scripts is something an AI can churn out quickly
-— and that's exactly the point. **We are not impressed by 26 passing tests.** We've
-seen what a naive AI dump looks like: 26 brittle, copy-pasted scripts that each
-re-implement login and checkout, full of hard-coded waits, that flake the moment the
-shared live site is slow.
+## Your task
 
-What we're looking for is what a **senior** does with the same task:
+Automate every case in `TEST_CASES.md`. The cases are written as happy-path scripts
+— translate them into maintainable automation, not 26 standalone scripts.
 
-- **Architecture & reuse.** Many of the 26 share the same flows — registration,
-  login, add-to-cart, and the checkout sequence repeat across cases 14/15/16/23/24.
-  A senior factors that ruthlessly (page objects, fixtures, shared actions, test
-  data builders) so 26 tests don't mean 26 copies. We will be reading for this.
-- **Reliability at (small) scale.** 26 tests against a shared, occasionally-flaky
-  live site is a real reliability problem. Make them pass *consistently* — proper
-  web-first waiting, no arbitrary `sleep`s, sensible retry/isolation strategy.
-- **Meaningful assertions.** Assert real outcomes (prices, quantities, totals,
-  addresses, the actual invoice), not just "an element is visible."
-- **Judgment, expressed in `STRATEGY.md`** (see below) — including which of the 26
-  are low-value or redundant, and what the published suite is *missing*.
+Several cases share the same flows: registration, login, and the checkout sequence
+recur across cases 14, 15, 16, 23 and 24. Structure your code so those flows are
+written once and reused.
 
-## Using AI is encouraged
-
-Use Claude Code, Copilot, ChatGPT, or whatever you normally work with. We assume you
-do. Since the 26 cases come with step-by-step instructions, an AI can generate
-automation for them almost verbatim — so this challenge is deliberately about the
-things AI *can't* do for you: **good architecture, real reliability, sound
-judgment, and verifying that what the AI produced is actually correct.** Be open
-about how you used it (see the "How I used AI" section below).
-
-## What to deliver
+## Deliverables
 
 A single Git repository (your fork) containing the following.
 
-### 1. The automated suite — all 26 cases
+### 1. The test suite — all 26 cases
 
-- **Recommended stack: Playwright.** Use **C#** or **TypeScript**. You may use a
-  different framework/language if you prefer — just justify it briefly in
-  `STRATEGY.md`.
-- **All 26 cases** from `TEST_CASES.md`, automated. Map each test to its case
-  number so we can see the coverage.
-- Built as a **framework, not a pile of scripts**: shared page objects/fixtures,
-  reusable actions, externalized test data and config, no duplicated flows.
-- **Reliable**: web-first waiting, no arbitrary `sleep`s, proper handling of
-  downloads/dialogs/test-data isolation. We will run the suite, more than once.
-- A short **README** with the exact commands to install and run the tests.
+- **Recommended stack: Playwright** with **TypeScript** or **C#**. You may use
+  another framework or language; if you do, explain why in `STRATEGY.md`.
+- Each test mapped to its case number.
+- Built as a framework: shared page objects/fixtures, reusable actions,
+  externalized test data and config, no duplicated flows.
+- Reliable: web-first waiting (no fixed `sleep`s), correct handling of downloads,
+  dialogs, and test-data isolation.
+- Meaningful assertions — verify real outcomes (prices, quantities, totals,
+  addresses, the invoice), not just that an element is present.
+- A **README** with the exact commands to install and run the suite.
 
-### 2. `STRATEGY.md` — your thinking
+### 2. `STRATEGY.md`
 
-The 26 are a given; this is where you show senior judgment *about* them. A short
-doc (roughly 1–2 pages, bullets are fine) covering:
+A short document (1–2 pages, bullets are fine) covering:
 
-- **Architecture** — how you structured the suite so 26 tests share flows instead of
-  duplicating them. What are your main abstractions and why?
-- **Reliability** — how you keep the suite green against a flaky shared site. What
-  did you deliberately avoid?
-- **Redundancy & value** — which of the 26 are low-value or overlap heavily (be
-  specific by number), and how that influenced your design.
-- **Gaps in the published suite** — the 26 are nearly all happy-path. What's
-  *missing* (negative/validation paths, boundaries, security, accessibility,
-  cross-browser…) and which one or two would you add first?
-- **Assumptions & trade-offs** given the 3-hour limit.
-- **How I used AI** — what you used it for, a concrete example where it gave you
-  something wrong or suboptimal and how you caught it, and what you verified by hand.
-- **Defects/oddities** — any real bugs or odd behavior you noticed on the site.
+- **Architecture** — your main abstractions and how shared flows are reused.
+- **Reliability** — how you keep the suite stable against a shared, occasionally
+  slow site.
+- **Redundancy** — which of the 26 overlap or add little value (by number), and how
+  that shaped your design.
+- **Gaps** — the 26 are happy-path only. What important coverage is missing
+  (negative/validation paths, boundaries, security, accessibility, cross-browser),
+  and what you would add first.
+- **Assumptions & trade-offs** — given the 3-hour limit. If your suite is partial,
+  say what is done and what is next.
+- **Defects / oddities** — anything notable you found on the site.
 
-## What we explicitly value (and don't)
+## What we look for
 
-- ✅ A clean, DRY framework where 26 tests reuse shared flows.
-- ✅ Tests that pass *reliably*, run after run.
-- ✅ Meaningful assertions and honest judgment about redundancy and gaps.
-- ✅ Openness about where you used AI and where you overrode it.
-- ❌ 26 copy-pasted scripts that each re-implement login/checkout.
-- ❌ Hard-coded `sleep`s and "element is visible" assertions that can't really fail.
-- ❌ Tests that don't run, or that only pass sometimes.
+- A clean, DRY framework where the 26 tests reuse shared flows.
+- Tests that pass reliably, run after run.
+- Meaningful assertions and clear reasoning about redundancy and gaps.
+
+We will run the suite, more than once.
+
+## Tooling
+
+Use whatever tools you normally work with, including AI assistants. We care about
+the result and the reasoning behind it.
 
 ## Getting started & submitting
 
-- **Start:** **fork this repo** and work in your fork. Your fork's creation
-  timestamp is your official start time.
-- **Clock:** you have **3 hours from that start time.** Commit and push what you
-  have when time is up — we'd rather see an honest, partial submission (with clear
-  notes in `STRATEGY.md` on what's done and what you'd do next) than an over-polished
-  one. Leave your commit history as-is.
-- **Deliver:** share your fork with the reviewer named in your invitation email
-  (add them as a collaborator if your fork is private).
-- Before you finish, make sure a **fresh checkout runs** by following only your
+- **Start:** fork this repo and work in your fork. The fork's creation time is your
+  start time.
+- **Time:** 3 hours. Commit and push what you have when the time is up — an honest
+  partial submission with clear notes beats an over-polished one. Leave your commit
+  history as-is.
+- **Submit:** share your fork with the reviewer named in your invitation email (add
+  them as a collaborator if your fork is private).
+- Before you finish, confirm that a fresh checkout runs by following only your
   README.
 
-This repo includes a `STRATEGY.md` template with the sections we expect — fill it
-in. Replace this challenge `README.md` with your own project README (how to install
-and run your tests).
+Replace this repo's `README.md` with your own project README. Fill in `STRATEGY.md`.
+Leave `CHALLENGE.md` and `TEST_CASES.md` in place.
 
-## A note on the follow-up interview
+## The interview
 
-We'll read your submission before we talk, and the interview will be built
-**around it** — we'll ask you to walk through your architecture, defend your
-abstractions, justify the gaps and redundancies you identified, and adapt your
-design to new requirements live. So make choices you can stand behind and explain.
-There are no trick questions; we just want to understand how you think.
-
-Good luck — we're looking forward to seeing your approach.
+We read your submission before we talk and build the conversation around it — your
+architecture, your trade-offs, the redundancy and gaps you identified, and adapting
+the design to new requirements. Make choices you can explain.

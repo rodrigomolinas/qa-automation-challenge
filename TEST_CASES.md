@@ -1,13 +1,8 @@
 # The 26 Test Cases
 
-These are the test cases published by the site at
-https://automationexercise.com/test_cases, reproduced here so your work is
-self-contained. **All 26 are in scope** — see `CHALLENGE.md` for what we're looking
-for (hint: it's about *how* you build 26 maintainable, reliable tests, not just
-that they exist).
-
-The steps below are the site's own happy-path scripts. You are expected to
-translate them into well-architected automation — not transcribe them literally.
+The test cases published at https://automationexercise.com/test_cases, reproduced
+here so the challenge is self-contained. All 26 are in scope; see `CHALLENGE.md` for
+the instructions.
 
 ---
 
